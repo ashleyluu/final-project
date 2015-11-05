@@ -164,29 +164,26 @@ var stylesArray = [
 ]
 
 function initialize() {
-        var mapCanvas = document.getElementById("map");
-        var myLatLng = {lat: 34.0129864, lng: -118.4973747};
-        var mapOptions = {
-          center: myLatLng,
-          zoom: 15,
-          mapTypeId: google.maps.MapTypeId.ROADMAP,
-          styles: stylesArray
-        }
+  var mapCanvas = document.getElementById("map");
+  var myLatLng = {lat: 34.0129864, lng: -118.4973747};
+  var mapOptions = {
+    center: myLatLng,
+    zoom: 15,
+    mapTypeId: google.maps.MapTypeId.ROADMAP,
+    styles: stylesArray
+  }
 
-        var map = new google.maps.Map(mapCanvas, mapOptions)
+  var map = new google.maps.Map(mapCanvas, mapOptions)
 
-        var marker = new google.maps.Marker({
-          position: myLatLng,
-          map: map,
-          title: 'Hello World!'
-        });
+  var marker = new google.maps.Marker({
+    position: myLatLng,
+    map: map,
+    title: 'Hello World!'
+  });
 
-        var marker = new google.maps.Marker({
-          position: {lat: 34.0138212, lng: -118.4899764},
-          map: map,
-          title: 'Hello World!'
-        });
+  var marker2 = new google.maps.Marker({
+    position: {lat: 33.9906423, lng: -118.4143755},
+    map: map,
+    title: 'Tacomiendo'
+  });
 }
-
-//google.maps.event.addDomListener(window, "load", initialize);
-      // google.maps.event.addDomListener(window, 'load', initialize);
