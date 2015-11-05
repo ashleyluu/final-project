@@ -164,7 +164,7 @@ var stylesArray = [
 ]
 
 function initialize() {
-        var mapCanvas = document.getElementById('map');
+        var mapCanvas = document.getElementById("map");
         var myLatLng = {lat: 34.0129864, lng: -118.4973747};
         var mapOptions = {
           center: myLatLng,
@@ -186,6 +186,7 @@ function initialize() {
           map: map,
           title: 'Hello World!'
         });
+}
 
-      }
-      google.maps.event.addDomListener(window, 'load', initialize);
+//google.maps.event.addDomListener(window, "load", initialize);
+      // google.maps.event.addDomListener(window, 'load', initialize);
