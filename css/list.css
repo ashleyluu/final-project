@@ -1,0 +1,33 @@
+.grid-container {
+  width: 80%;
+  height: 100vh;
+  margin: 0 auto;
+}
+
+.grid {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+
+  -webkit-flex-flow: row wrap;
+  justify-content: space-around;
+}
+
+.grid-item {
+  background: #ffffff;
+  width: 200px;
+  height: auto;
+
+  line-height: 21px;
+  color: #000000;
+  font-weight: bold;
+  font-size: 1em;
+  text-align: center;
+  border: 1px solid #000000;
+}

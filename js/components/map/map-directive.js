@@ -1,4 +1,4 @@
-var MapDirective = function(){
+var MapDirective = function($map){
   return {
     restrict: 'AE',
     templateUrl: './js/components/map/map-component.html',
@@ -7,7 +7,8 @@ var MapDirective = function(){
       pre: function(scope, elem, attrs) {
       },
       post: function(scope, elem, attrs) {
+      
       }
     }
   };
-}; 
+};

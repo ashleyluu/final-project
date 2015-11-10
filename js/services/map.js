@@ -1,176 +1,180 @@
-var stylesArray = [
-    {
-        "featureType": "water",
-        "elementType": "all",
-        "stylers": [
-            {
-                "visibility": "simplified"
-            },
-            {
-                "hue": "#e9ebed"
-            },
-            {
-                "saturation": -78
-            },
-            {
-                "lightness": 67
-            }
-        ]
-    },
-    {
-        "featureType": "landscape",
-        "elementType": "all",
-        "stylers": [
-            {
-                "visibility": "simplified"
-            },
-            {
-                "hue": "#ffffff"
-            },
-            {
-                "saturation": -100
-            },
-            {
-                "lightness": 100
-            }
-        ]
-    },
-    {
-        "featureType": "road",
-        "elementType": "geometry",
-        "stylers": [
-            {
-                "visibility": "simplified"
-            },
-            {
-                "hue": "#bbc0c4"
-            },
-            {
-                "saturation": -93
-            },
-            {
-                "lightness": 31
-            }
-        ]
-    },
-    {
-        "featureType": "poi",
-        "elementType": "all",
-        "stylers": [
-            {
-                "visibility": "off"
-            },
-            {
-                "hue": "#ffffff"
-            },
-            {
-                "saturation": -100
-            },
-            {
-                "lightness": 100
-            }
-        ]
-    },
-    {
-        "featureType": "road.local",
-        "elementType": "geometry",
-        "stylers": [
-            {
-                "visibility": "simplified"
-            },
-            {
-                "hue": "#e9ebed"
-            },
-            {
-                "saturation": -90
-            },
-            {
-                "lightness": -8
-            }
-        ]
-    },
-    {
-        "featureType": "transit",
-        "elementType": "all",
-        "stylers": [
-            {
-                "visibility": "on"
-            },
-            {
-                "hue": "#e9ebed"
-            },
-            {
-                "saturation": 10
-            },
-            {
-                "lightness": 69
-            }
-        ]
-    },
-    {
-        "featureType": "administrative.locality",
-        "elementType": "all",
-        "stylers": [
-            {
-                "visibility": "on"
-            },
-            {
-                "hue": "#2c2e33"
-            },
-            {
-                "saturation": 7
-            },
-            {
-                "lightness": 19
-            }
-        ]
-    },
-    {
-        "featureType": "road",
-        "elementType": "labels",
-        "stylers": [
-            {
-                "visibility": "on"
-            },
-            {
-                "hue": "#bbc0c4"
-            },
-            {
-                "saturation": -93
-            },
-            {
-                "lightness": 31
-            }
-        ]
-    },
-    {
-        "featureType": "road.arterial",
-        "elementType": "labels",
-        "stylers": [
-            {
-                "visibility": "simplified"
-            },
-            {
-                "hue": "#bbc0c4"
-            },
-            {
-                "saturation": -93
-            },
-            {
-                "lightness": -2
-            }
-        ]
-    }
-]
+var MapService = function(){
+  this.stylesArray = [
+      {
+          "featureType": "water",
+          "elementType": "all",
+          "stylers": [
+              {
+                  "visibility": "simplified"
+              },
+              {
+                  "hue": "#e9ebed"
+              },
+              {
+                  "saturation": -78
+              },
+              {
+                  "lightness": 67
+              }
+          ]
+      },
+      {
+          "featureType": "landscape",
+          "elementType": "all",
+          "stylers": [
+              {
+                  "visibility": "simplified"
+              },
+              {
+                  "hue": "#ffffff"
+              },
+              {
+                  "saturation": -100
+              },
+              {
+                  "lightness": 100
+              }
+          ]
+      },
+      {
+          "featureType": "road",
+          "elementType": "geometry",
+          "stylers": [
+              {
+                  "visibility": "simplified"
+              },
+              {
+                  "hue": "#bbc0c4"
+              },
+              {
+                  "saturation": -93
+              },
+              {
+                  "lightness": 31
+              }
+          ]
+      },
+      {
+          "featureType": "poi",
+          "elementType": "all",
+          "stylers": [
+              {
+                  "visibility": "off"
+              },
+              {
+                  "hue": "#ffffff"
+              },
+              {
+                  "saturation": -100
+              },
+              {
+                  "lightness": 100
+              }
+          ]
+      },
+      {
+          "featureType": "road.local",
+          "elementType": "geometry",
+          "stylers": [
+              {
+                  "visibility": "simplified"
+              },
+              {
+                  "hue": "#e9ebed"
+              },
+              {
+                  "saturation": -90
+              },
+              {
+                  "lightness": -8
+              }
+          ]
+      },
+      {
+          "featureType": "transit",
+          "elementType": "all",
+          "stylers": [
+              {
+                  "visibility": "on"
+              },
+              {
+                  "hue": "#e9ebed"
+              },
+              {
+                  "saturation": 10
+              },
+              {
+                  "lightness": 69
+              }
+          ]
+      },
+      {
+          "featureType": "administrative.locality",
+          "elementType": "all",
+          "stylers": [
+              {
+                  "visibility": "on"
+              },
+              {
+                  "hue": "#2c2e33"
+              },
+              {
+                  "saturation": 7
+              },
+              {
+                  "lightness": 19
+              }
+          ]
+      },
+      {
+          "featureType": "road",
+          "elementType": "labels",
+          "stylers": [
+              {
+                  "visibility": "on"
+              },
+              {
+                  "hue": "#bbc0c4"
+              },
+              {
+                  "saturation": -93
+              },
+              {
+                  "lightness": 31
+              }
+          ]
+      },
+      {
+          "featureType": "road.arterial",
+          "elementType": "labels",
+          "stylers": [
+              {
+                  "visibility": "simplified"
+              },
+              {
+                  "hue": "#bbc0c4"
+              },
+              {
+                  "saturation": -93
+              },
+              {
+                  "lightness": -2
+              }
+          ]
+      }
+  ];
+  this.myresults = [];
+};
 
-function initialize() {
+MapService.prototype.initialize = function() {
+  var self = this;
   var mapCanvas = document.getElementById("map");
   var myLatLng = {lat: 34.051503, lng: -118.248660};
   var mapOptions = {
     center: myLatLng,
     zoom: 13,
     mapTypeId: google.maps.MapTypeId.ROADMAP,
-    styles: stylesArray
+    styles: this.stylesArray
   }
 
   var map = new google.maps.Map(mapCanvas, mapOptions)
@@ -192,4 +196,31 @@ function initialize() {
     map: map,
     title: 'Rutts Hawaiian Cafe'
   });
+  //console.log(marker, marker2, marker3)
+  var service = new google.maps.places.PlacesService(map);
+
+
+
+
+
+    return new Promise(function(resolve, reject){
+      service.nearbySearch({
+        location: myLatLng,
+        radius: 500,
+        types: ['restaurant']
+      }, function(results, status) {
+          if (status === google.maps.places.PlacesServiceStatus.OK) {
+            for (var i = 0; i < results.length; i++) {
+              console.log(results[i].name);
+              self.myresults.push(results[i].name);
+            }
+            resolve(self.myresults);
+          }
+
+      });
+    });
+
+  //return this.myresults;
+
+
 }
