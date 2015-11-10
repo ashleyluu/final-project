@@ -1,7 +1,7 @@
-var MapDirective = function(){
+var ListDirective = function(){
   return {
     restrict: 'AE',
-    templateUrl: './js/components/map/map-component.html',
+    templateUrl: './js/components/list/list.html',
     scope: true,
     link: {
       pre: function(scope, elem, attrs) {
@@ -10,4 +10,4 @@ var MapDirective = function(){
       }
     }
   };
-}; 
+};

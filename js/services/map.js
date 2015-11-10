@@ -165,10 +165,10 @@ var stylesArray = [
 
 function initialize() {
   var mapCanvas = document.getElementById("map");
-  var myLatLng = {lat: 34.0129864, lng: -118.4973747};
+  var myLatLng = {lat: 34.051503, lng: -118.248660};
   var mapOptions = {
     center: myLatLng,
-    zoom: 15,
+    zoom: 13,
     mapTypeId: google.maps.MapTypeId.ROADMAP,
     styles: stylesArray
   }
@@ -182,8 +182,14 @@ function initialize() {
   });
 
   var marker2 = new google.maps.Marker({
-    position: {lat: 33.9906423, lng: -118.4143755},
+    position: {lat: 33.994916, lng: -118.417442},
     map: map,
     title: 'Tacomiendo'
+  });
+
+  var marker3 = new google.maps.Marker({
+    position: {lat: 33.997228, lng: -118.424620},
+    map: map,
+    title: 'Rutts Hawaiian Cafe'
   });
 }
