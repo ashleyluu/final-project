@@ -1,6 +1,7 @@
 .grid-container {
   width: 100%;
   height: 100%;
+  margin-top: 100px;
 }
 
 .grid {
@@ -17,20 +18,25 @@
 }
 
 .grid-item {
-  background: #FFFFFF;
+  background: white;
   width: 30%;
   height: auto;
-  line-height: 21px;
-  color: #000000;
+  padding: 20px 0;
   font-weight: bold;
-  font-size: 1em;
   text-align: center;
   border: 1px solid #FF9F1C;
 }
 
-h2 {
-  color: #FF9F1C;
-  font-size: 2em;
+.grid-item h2 {
+  color: #FFBF69;
+  font-size: 1.5em;
+  line-height: 30px;
+}
+
+.grid-item h3 {
+  color: #736F72;
+  font-size: 1em;
+  line-height: 21px;
 }
 
 #map {
@@ -114,11 +120,11 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
-  color: #121212;
+  color: #736F72;
   font-size: 16px;
   line-height: 1.4;
   font-family: 'Open Sans', Helvetica, Arial, sans-serif;
-  background: #FFFFFF;
+  background: white;
 }
 
 .text-center {

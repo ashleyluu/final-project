@@ -18,11 +18,11 @@ body {
   height:100%;
   margin: 0;
   padding: 0;
-  color: #121212;
+  color: $gray;
   font-size: 16px;
   line-height: 1.4;
   font-family: 'Open Sans', Helvetica, Arial, sans-serif;
-  background: #FFFFFF;
+  background: white;
 }
 
 .text-center {
@@ -30,6 +30,6 @@ body {
 }
 
 h1 {
-  color: #2EC4B6;
+  color: $teal;
   font-size: 3em;
 }
