@@ -196,31 +196,25 @@ MapService.prototype.initialize = function() {
     map: map,
     title: 'Rutts Hawaiian Cafe'
   });
-  //console.log(marker, marker2, marker3)
+
   var service = new google.maps.places.PlacesService(map);
 
-
-
-
-
-    return new Promise(function(resolve, reject){
-      service.nearbySearch({
-        location: myLatLng,
-        radius: 500,
-        types: ['restaurant']
-      }, function(results, status) {
-          if (status === google.maps.places.PlacesServiceStatus.OK) {
-            for (var i = 0; i < results.length; i++) {
-              console.log(results[i].name);
-              self.myresults.push(results[i].name);
-            }
-            resolve(self.myresults);
+  return new Promise(function(resolve, reject){
+    service.nearbySearch({
+      location: myLatLng,
+      radius: 500,
+      types: ['restaurant']
+    }, function(results, status) {
+        if (status === google.maps.places.PlacesServiceStatus.OK) {
+          for (var i = 0; i < results.length; i++) {
+            console.log(results[i].name);
+            self.myresults.push(results[i].name);
           }
+          resolve(self.myresults);
+        }
 
-      });
     });
-
-  //return this.myresults;
+  });
 
 
 }
