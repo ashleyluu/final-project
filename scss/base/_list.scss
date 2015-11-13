@@ -20,10 +20,11 @@
 }
 
 .grid-item {
-  background: white;
   width: 30%;
   height: auto;
+  margin: 20px 0;
   padding: 20px 0;
+  background: white;
   font-weight: bold;
   text-align: center;
   border: 1px solid $gold;

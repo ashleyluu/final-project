@@ -176,44 +176,43 @@ MapService.prototype.initialize = function() {
     mapTypeId: google.maps.MapTypeId.ROADMAP,
     styles: this.stylesArray
   }
-
-  var map = new google.maps.Map(mapCanvas, mapOptions)
-
-  var marker = new google.maps.Marker({
-    position: myLatLng,
-    map: map,
-    title: 'Hello World!'
-  });
-
-  var marker2 = new google.maps.Marker({
-    position: {lat: 33.994916, lng: -118.417442},
-    map: map,
-    title: 'Tacomiendo'
-  });
-
-  var marker3 = new google.maps.Marker({
-    position: {lat: 33.997228, lng: -118.424620},
-    map: map,
-    title: 'Rutts Hawaiian Cafe'
-  });
+  console.log(mapCanvas, mapOptions);
+  var map = new google.maps.Map(mapCanvas, mapOptions);
 
   var service = new google.maps.places.PlacesService(map);
 
   return new Promise(function(resolve, reject){
-    service.nearbySearch({
-      location: myLatLng,
-      radius: 500,
-      types: ['restaurant']
-    }, function(results, status) {
-        if (status === google.maps.places.PlacesServiceStatus.OK) {
-          for (var i = 0; i < results.length; i++) {
-            console.log(results[i].name);
-            self.myresults.push(results[i].name);
-          }
-          resolve(self.myresults);
-        }
+    var results = [
+      {name:'Tacomiendo', place_id:'ChIJB8GQ7wu6woAR6Oq3TGm0QkE'},
+      {name:'Espresso Profeta', place_id:'ChIJkydzloG8woARi25SOkVMPx4'},
+      {name:'Mohawk Bend', place_id:'ChIJ_7FXrxDHwoARpqgRGbQdn0Q'},
+      {name:'Rutts Hawaiian Cafe & Catering', place_id:'ChIJTTmBLGm6woARXEBO8oTxLfk'},
+      {name:'Glorias Cafe', place_id:'ChIJSdQYRS66woARTbJSr73TdTY'}
+    ];
+
+    results.forEach(function(result){
+        var request = {
+           placeId: result.place_id
+         };
+
+         service.getDetails(request, function (place, status) {
+
+           if (status == google.maps.places.PlacesServiceStatus.OK) {
+             result.details = place;
+             var marker = new google.maps.Marker({
+               map: map,
+               position: place.geometry.location
+             });
+
+             google.maps.event.addListener(marker, 'click', function() {
+               infowindow.setContent(place.name);
+               infowindow.open(map, this);
+             });
+           }
+         });
 
     });
+    resolve(results);
   });
 
 

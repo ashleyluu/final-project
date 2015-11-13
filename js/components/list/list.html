@@ -1,11 +1,9 @@
 <div class="grid-container">
   <ul class="grid">
-    <li class="grid-item" ng-repeat="place in places">
-      <img ng-src="{{place.image}}">
-      <!-- {{myresults.name}} -->
-      <h2>{{place.name}}</h2>
-      <h3>{{place.address}}</h3>
-      <h3>{{place.description}}</h3>
+    <li class="grid-item" ng-repeat="result in places">
+      <h2>{{result.name}}</h2>
+      <h3>{{result[i]}}</h3>
+      <!-- <img ng-src="{{place.image}}"> -->
     </li>
   </ul>
 </div>
