@@ -1,8 +1,8 @@
 <div class="grid-container">
   <ul class="grid">
-    <li class="grid-item" ng-repeat="result in places">
-      <h2>{{result.name}}</h2>
-      <h3>{{result[i]}}</h3>
+    <li class="grid-item" ng-repeat="result in results">
+      <h2>{{result.details.name}}</h2>
+      <h3>{{result.details.vicinity}}</h3>
       <!-- <img ng-src="{{place.image}}"> -->
     </li>
   </ul>

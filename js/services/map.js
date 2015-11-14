@@ -180,15 +180,15 @@ MapService.prototype.initialize = function() {
   var map = new google.maps.Map(mapCanvas, mapOptions);
 
   var service = new google.maps.places.PlacesService(map);
-
+  var results = [
+    {name:'Tacomiendo', place_id:'ChIJB8GQ7wu6woAR6Oq3TGm0QkE'},
+    {name:'Espresso Profeta', place_id:'ChIJkydzloG8woARi25SOkVMPx4'},
+    {name:'Mohawk Bend', place_id:'ChIJ_7FXrxDHwoARpqgRGbQdn0Q'},
+    {name:'Rutts Hawaiian Cafe & Catering', place_id:'ChIJTTmBLGm6woARXEBO8oTxLfk'},
+    {name:'Glorias Cafe', place_id:'ChIJSdQYRS66woARTbJSr73TdTY'}
+  ];
   return new Promise(function(resolve, reject){
-    var results = [
-      {name:'Tacomiendo', place_id:'ChIJB8GQ7wu6woAR6Oq3TGm0QkE'},
-      {name:'Espresso Profeta', place_id:'ChIJkydzloG8woARi25SOkVMPx4'},
-      {name:'Mohawk Bend', place_id:'ChIJ_7FXrxDHwoARpqgRGbQdn0Q'},
-      {name:'Rutts Hawaiian Cafe & Catering', place_id:'ChIJTTmBLGm6woARXEBO8oTxLfk'},
-      {name:'Glorias Cafe', place_id:'ChIJSdQYRS66woARTbJSr73TdTY'}
-    ];
+
 
     results.forEach(function(result){
         var request = {
@@ -199,6 +199,7 @@ MapService.prototype.initialize = function() {
 
            if (status == google.maps.places.PlacesServiceStatus.OK) {
              result.details = place;
+             self.myresults.push(result.details);
              var marker = new google.maps.Marker({
                map: map,
                position: place.geometry.location
@@ -212,7 +213,7 @@ MapService.prototype.initialize = function() {
          });
 
     });
-    resolve(results);
+    resolve(self.myresults);
   });
 
 
