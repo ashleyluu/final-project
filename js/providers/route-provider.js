@@ -7,15 +7,17 @@ var RouteProvider = function ( $stateProvider, $locationProvider ){
       controller  : function($scope, $window, $log, $timeout, $map){
 
         $scope.title = 'rawr why cant i think of a name';
-        $scope.results = [];
 
-        // $timeout(function(){
-        //     $map.initialize().then(function(res){
-        //       $scope.results = res;
-        //       $scope.$apply();
-        //       console.log($scope.results);
-        //     });
-        // }, 2000);
+        $timeout(function(){
+          $map.initialize().then(function(res){
+            $timeout(function(){
+              $scope.results = res;
+              console.log(res[0].details.photos[0].getUrl({'maxWidth': 35, 'maxHeight': 35}))
+            }, 200);
+          });
+          $scope.$apply();
+        }, 200);
+
       }
     })
       .state('map', {
