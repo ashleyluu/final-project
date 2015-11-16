@@ -22,7 +22,9 @@ body {
   font-size: 16px;
   line-height: 1.4;
   font-family: 'Open Sans', Helvetica, Arial, sans-serif;
-  background: white;
+  // background: url('http://www.wired.com/images_blogs/wiredscience/2014/01/LAdetail.png');
+  // background-size: cover;
+  // background-repeat: no-repeat;
 }
 
 .text-center {
@@ -36,25 +38,80 @@ h1 {
 }
 
 a {
+  color: #ffffff;
   text-decoration: none;
 }
 
-.pointer {
-  cursor:pointer;
-}
+.nav-wrap {
 
-.button {
-  padding: 20px 75px;
-  text-align: center;
-  background: $teal;
-  color: #FFFFFF;
-  font-size: 1.5em;
-  line-height: 34px;
-  cursor: pointer;
-}
+  .button {
+    margin-right: 5px;
+    padding: 20px 75px;
+    background: $teal;
+    font-size: 1.5em;
+    line-height: 34px;
+    cursor: pointer;
+    &:hover {
+      background: $light-gold;
+    }
+  }
 
-.button:hover {
-  background: $light-blue;
+  ul {
+    display: inline-block;
+  	list-style: none;
+  	margin: 0;
+  	padding: 0;
+  }
+
+  ul a {
+
+  	text-decoration: none;
+  }
+
+  ul li {
+  	position: relative;
+  	margin: 0;
+  	padding: 0;
+  }
+
+  ul li.current-menu-item {
+  	background: #ddd;
+  }
+
+  ul ul {
+    @extend .button;
+  	display: none;
+  	position: absolute;
+  	top: 150%;
+  	left: 0;
+  	padding: 0;
+    &:hover {
+      background: $teal;
+    }
+  }
+
+  ul ul li {
+  	float: none;
+  	width: 200px;
+  }
+
+  ul ul a {
+    display: block;
+  	line-height: 120%;
+  	padding: 10px 15px;
+    &:hover {
+      background: $light-gold;
+    }
+  }
+
+  ul ul ul {
+  	top: 0;
+  	left: 100%;
+  }
+
+  ul li:hover > ul {
+  	display: block;
+  }
 }
 
 .hide {

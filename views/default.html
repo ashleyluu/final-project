@@ -1,8 +1,19 @@
 <div class="text-center">
   <h1>{{title}}</h1>
-  <a class="button" ui-sref="map">Map</a>
-</div>
-<list></list>
-<div class="hide">
-  <map></map>
+
+  <nav class="nav-wrap">
+    <ul>
+      <li><a class="button">Neighborhoods</a>
+        <ul>
+          <li><a ui-sref="del-rey">Del Rey</a></li>
+          <li><a ui-sref="mar-vista">Mar Vista</a></li>
+          <li><a ui-sref="midcity">Mid-City</a></li>
+          <li><a ui-sref="silverlake">Silverlake</a></li>
+          <li><a ui-sref="echo-park">Echo Park</a>
+          <li><a ui-sref="map">Sub Menu 5</a></li>
+        </ul>
+      </li>
+    </ul>
+    <a class="button" ui-sref="map">Map</a>
+  </nav>
 </div>
