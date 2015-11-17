@@ -213,6 +213,7 @@ MapService.prototype.initialize = function() {
          });
 
     });
+    console.log(hotspots);
     resolve(hotspots);
   });
 

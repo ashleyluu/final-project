@@ -8,24 +8,26 @@ var RouteProvider = function ( $stateProvider, $locationProvider ){
 
         $scope.title = 'rawr why cant i think of a name';
 
+        $scope.zipcodeFilter = function(zip){
+          var zipcode = document.querySelectorAll('[data-zip]');
+          for (var i=0; i < zipcode.length; i++) {
+            if(res.zip == zip){
+                //show div
+              } else {
+                ul.removeChild()
+              }
+        };
+
+        $timeout(function(){
+          $map.initialize().then(function(res){
+            $timeout(function(){
+              $scope.results = res;
+            }, 300);
+          });
+          $scope.$apply();
+        }, 300);
       }
     })
-      .state('del-rey', {
-        url: '/del-rey',
-        templateUrl: './views/del-rey.html',
-        controller  : function($scope, $timeout, $window, $map){
-
-          $timeout(function(){
-            $map.initialize().then(function(res){
-              $timeout(function(){
-                $scope.results = res;
-                // console.log(res[0].details.photos[0].getUrl({'maxWidth': 35, 'maxHeight': 35}))
-              }, 300);
-            });
-            $scope.$apply();
-          }, 300);
-        }
-      })
       .state('map', {
         url: '/map',
         templateUrl: './views/map.html',
