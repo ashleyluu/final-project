@@ -21,7 +21,7 @@
   width: 30%;
   height: auto;
   margin: 20px 0;
-  padding: 20px 0;
+  padding-bottom: 20px;
   background: white;
   font-weight: bold;
   text-align: center;
@@ -29,22 +29,31 @@
 }
 
 .grid-item h2 {
+  padding-top: 20px;
   color: #FFBF69;
-  font-size: 1.5em;
-  line-height: 30px;
+  font-size: 1.8em;
+  line-height: 1.5;
 }
 
 .grid-item h3 {
   color: #736F72;
   font-size: 1em;
-  line-height: 21px;
+  line-height: 1.4;
+}
+
+.grid-item img {
+  width: 100%;
+  height: auto;
+  border-bottom: 1px solid #FF9F1C;
 }
 
 #map {
+  z-index: 0;
   width: 80%;
   height: 1000px;
-  margin-top: 100px;
+  margin: 0 auto 100px;
   background-color: #CCC;
+  border: 1px solid #FF9F1C;
 }
 
 /* http://meyerweb.com/eric/tools/css/reset/ 
@@ -126,6 +135,7 @@ body {
   font-size: 16px;
   line-height: 1.4;
   font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+  background: #ffffff;
 }
 
 .text-center {
@@ -173,11 +183,8 @@ a {
   padding: 0;
 }
 
-.nav-wrap ul li.current-menu-item {
-  background: #ddd;
-}
-
 .nav-wrap ul ul {
+  z-index: 1;
   display: none;
   position: absolute;
   top: 150%;
@@ -191,7 +198,7 @@ a {
 
 .nav-wrap ul ul li {
   float: none;
-  width: 200px;
+  width: 280px;
 }
 
 .nav-wrap ul ul a {

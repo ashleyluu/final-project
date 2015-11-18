@@ -4,18 +4,41 @@ var RouteProvider = function ( $stateProvider, $locationProvider ){
     .state('default', {
       url: '/default',
       templateUrl: './views/default.html',
-      controller  : function($scope, $window, $log, $timeout, $map){
+      controller: function($scope, $window, $log, $timeout, $map){
 
         $scope.title = 'rawr why cant i think of a name';
 
         $scope.zipcodeFilter = function(zip){
           var zipcode = document.querySelectorAll('[data-zip]');
-          for (var i=0; i < zipcode.length; i++) {
-            if(res.zip == zip){
-                //show div
-              } else {
-                ul.removeChild()
+          var zipList = zip.split(",");
+          console.log(zipList);
+          for (var i=0; i < zipcode.length; i++){
+            zipcode[i].style.display = "none";
+          }
+
+          for (var i=0; i < zipcode.length; i++){
+            for (var j=0; j < zipList.length; j++){
+              if(zipcode[i].attributes[2].value == zipList[j]){
+                zipcode[i].style.display = "block";
               }
+            }
+          }
+        };
+
+        $scope.clearFilter = function(){
+          var zipcode = document.querySelectorAll('[data-zip]');
+          for (var i=0; i < zipcode.length; i++){
+            zipcode[i].style.display = "block";
+          }
+          document.getElementsByClassName('hide')[0].style.display = "none";
+        };
+
+        $scope.mapDisplay = function(){
+          var zipcode = document.querySelectorAll('[data-zip]');
+          for (var i=0; i < zipcode.length; i++){
+            zipcode[i].style.display = "none";
+          }
+          document.getElementsByClassName('hide')[0].style.display = "block";
         };
 
         $timeout(function(){
@@ -27,15 +50,5 @@ var RouteProvider = function ( $stateProvider, $locationProvider ){
           $scope.$apply();
         }, 300);
       }
-    })
-      .state('map', {
-        url: '/map',
-        templateUrl: './views/map.html',
-        controller  : function($scope, $timeout, $window, $map){
-
-          $timeout(function(){
-            $map.initialize();
-          },100);
-        }
-      });
+    });
 };

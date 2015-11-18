@@ -3,18 +3,17 @@
 
   <nav class="nav-wrap">
     <ul>
-      <li><a class="button">Neighborhoods</a>
+      <li><a class="button" ng-click="clearFilter()">Neighborhoods</a>
         <ul>
-          <li><a ng-click="zipcodeFilter('90230')">Del Rey</a></li>
-          <li><a ng-click="zipcodeFilter(zip)">Mar Vista</a></li>
-          <li><a ng-click="zipcodeFilter(zip)">Mid-City</a></li>
-          <li><a ng-click="zipcodeFilter(zip)">Silverlake</a></li>
-          <li><a ng-click="zipcodeFilter(zip)">Echo Park</a>
-          <li><a ng-click="zipcodeFilter(zip)">Sub Menu 5</a></li>
+          <li><a ng-click="zipcodeFilter('90230,90066')">Del Rey / Mar Vista</a></li>
+          <li><a ng-click="zipcodeFilter('90034')">Palms</a>
+          <li><a ng-click="zipcodeFilter('90004')">Mid-City</a></li>
+          <li><a ng-click="zipcodeFilter('90026')">Silver Lake / Echo Park</a></li>
         </ul>
       </li>
     </ul>
-    <a class="button" ui-sref="map">Map</a>
+    <a class="button" ng-click="mapDisplay()">Map</a>
+    <a class="button" ng-click="clearFilter()">Reset</a>
   </nav>
 </div>
 

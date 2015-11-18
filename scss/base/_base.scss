@@ -22,9 +22,7 @@ body {
   font-size: 16px;
   line-height: 1.4;
   font-family: 'Open Sans', Helvetica, Arial, sans-serif;
-  // background: url('http://www.wired.com/images_blogs/wiredscience/2014/01/LAdetail.png');
-  // background-size: cover;
-  // background-repeat: no-repeat;
+  background: #ffffff;
 }
 
 .text-center {
@@ -74,11 +72,8 @@ a {
   	padding: 0;
   }
 
-  ul li.current-menu-item {
-  	background: #ddd;
-  }
-
   ul ul {
+    z-index: 1;
     @extend .button;
   	display: none;
   	position: absolute;
@@ -92,7 +87,7 @@ a {
 
   ul ul li {
   	float: none;
-  	width: 200px;
+  	width: 280px;
   }
 
   ul ul a {

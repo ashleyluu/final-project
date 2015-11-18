@@ -1,8 +1,10 @@
 <div class="grid-container">
   <ul class="grid">
     <li class="grid-item" ng-repeat="result in results" data-zip="{{result.details.address_components[5].long_name}}">
+      <img ng-src="{{result.image}}">
       <h2>{{result.name}}</h2>
       <h3>{{result.details.vicinity}}</h3>
+      {{result.description}}
     </li>
   </ul>
 </div>
