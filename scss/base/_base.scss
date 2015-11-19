@@ -44,7 +44,7 @@ a {
 
   .button {
     margin-right: 5px;
-    padding: 20px 75px;
+    padding: 20px 65px;
     background: $teal;
     font-size: 1.5em;
     line-height: 34px;
@@ -87,7 +87,7 @@ a {
 
   ul ul li {
   	float: none;
-  	width: 280px;
+  	width: 290px;
   }
 
   ul ul a {
@@ -97,11 +97,6 @@ a {
     &:hover {
       background: $light-gold;
     }
-  }
-
-  ul ul ul {
-  	top: 0;
-  	left: 100%;
   }
 
   ul li:hover > ul {

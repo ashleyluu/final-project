@@ -169,16 +169,15 @@ var MapService = function(){
 MapService.prototype.initialize = function() {
   var self = this;
   var mapCanvas = document.getElementById("map");
-  var myLatLng = {lat: 34.051503, lng: -118.248660};
   var mapOptions = {
-    center: myLatLng,
-    zoom: 13,
+    center: new google.maps.LatLng(33.996146, -118.420481),
+    zoom: 12,
     mapTypeId: google.maps.MapTypeId.ROADMAP,
     styles: this.stylesArray
   }
 
   var map = new google.maps.Map(mapCanvas, mapOptions);
-
+  var infowindow = new google.maps.InfoWindow();
   var service = new google.maps.places.PlacesService(map);
 
   return new Promise(function(resolve, reject){
@@ -187,43 +186,43 @@ MapService.prototype.initialize = function() {
         name: "Tacomiendo",
         place_id: "ChIJB8GQ7wu6woAR6Oq3TGm0QkE",
         image: "http://farm5.static.flickr.com/4063/4388171640_736b529992.jpg",
-        description: ""
+        description: "Massive burritos for when all you want to do is stay in and wear stretchy pants."
       },
       {
         name: "Espresso Profeta",
         place_id: "ChIJkydzloG8woARi25SOkVMPx4",
         image: "http://fantastic-machine.com/penina/wp-content/uploads/2013/07/espresso-profeta_4650.jpg",
-        description: ""
+        description: "The most delicious coffee in Westwood. It's a little $$, but that also means fewer students hang around here."
       },
       {
         name: "Mohawk Bend",
         place_id: "ChIJ_7FXrxDHwoARpqgRGbQdn0Q",
         image: "http://www.archpaper.com/uploads/image/mohawk_bend_01.jpg",
-        description: ""
+        description: "Great selection of craft beers. Perfect for grabbing a meal and drinks before a show at the Echo / Echoplex."
       },
       {
         name: "Rutt's Hawaiian Cafe & Catering",
         place_id: "ChIJTTmBLGm6woARXEBO8oTxLfk",
         image: "http://momsla.com/wp-content/uploads/2013/07/IMG_5886.jpg",
-        description: ""
+        description: "Affordable & delicious comfort food"
       },
       {
         name: "Pine & Crane",
         place_id: "ChIJLcT3DEjHwoARZa_z4-ThJCs",
         image: "http://images2.laweekly.com/imager/pine-and-crane-interior/u/original/4605769/img_2834.jpeg",
-        description: ""
+        description: "Modern Taiwanese cuisine"
       },
       {
         name: "Go Get Em Tiger",
         place_id: "ChIJy_y8ese4woARDs78kURK5Gk",
         image: "https://media.timeout.com/images/100717481/617/347/image.jpg",
-        description: ""
+        description: "Get the iced almond milk latte + scrambled egg biscuit. *Tip: To order, just walk up to the bar."
       },
       {
         name: "Gloria's Cafe",
         place_id: "ChIJSdQYRS66woARTbJSr73TdTY",
         image: "http://www.dinersdriveinsdiveslocations.com/glorias-cafe-california.jpg",
-        description: ""
+        description: "Mexican & Salvadoran. Cheap pupusas!"
       }
     ];
 
@@ -242,7 +241,7 @@ MapService.prototype.initialize = function() {
           });
 
           google.maps.event.addListener(marker, 'click', function() {
-            infowindow.setContent(place.name);
+            infowindow.setContent('<span style="padding: 0px; text-align:left" align="left"><h5>' + place.name + '&nbsp; &nbsp; ' + place.rating + '</h5><p>' + place.formatted_address + '<br />' + place.formatted_phone_number + '<br />' + '<a  target="_blank" href=' + place.website + '>' + place.website + '</a></p>');
             infowindow.open(map, this);
           });
         }

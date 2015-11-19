@@ -6,7 +6,7 @@ var RouteProvider = function ( $stateProvider, $locationProvider ){
       templateUrl: './views/default.html',
       controller: function($scope, $window, $log, $timeout, $map){
 
-        $scope.title = 'rawr why cant i think of a name';
+        $scope.title = 'la bites';
 
         $scope.zipcodeFilter = function(zip){
           var zipcode = document.querySelectorAll('[data-zip]');
